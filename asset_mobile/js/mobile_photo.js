@@ -241,4 +241,5 @@ function handleImageVideoChange() {
 // arrow click slide image js
 
 
+
 // arrow click slide image js ends
