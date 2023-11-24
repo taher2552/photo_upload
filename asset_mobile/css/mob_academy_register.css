@@ -259,7 +259,7 @@
   width: 100%;
 }
 
-.mob_btn_wrapper{
+.mob_btn_wrapper {
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
@@ -797,7 +797,7 @@ input[type="number"] {
   display: none;
 }
 
-#citySearchContainer{
+#citySearchContainer {
   margin-bottom: 1rem;
 }
 
@@ -826,43 +826,39 @@ input[type="number"] {
   margin-right: 0.5rem;
 }
 
-
-
 /* photo upload page  */
 
-.mob_upload_photo{
+.mob_upload_photo {
   width: 100%;
   padding-left: 1rem;
   margin-top: 1.5rem;
 }
 
-.mob_upload_photo p:first-child{
+.mob_upload_photo p:first-child {
   font-size: 0.9375rem;
-font-weight: 500;
+  font-weight: 500;
 }
 
-.mob_upload_photo p:last-child{
-  color: #909DB0;
+.mob_upload_photo p:last-child {
+  color: #909db0;
   font-size: 0.75rem;
 }
 
-
-.bmp-upload-2 {
+.mob_academy_pic_upload {
   display: flex;
   justify-content: start;
   align-items: end;
-  height:auto;
+  height: auto;
   width: 100%;
 }
 
-
-.contact-browse {
+.mob_new_browse {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.contact-browse-btn {
+.mob_new_browse_btn {
   background: #f3f6fa;
   border: none;
   outline: none;
@@ -875,27 +871,22 @@ font-weight: 500;
   transform: translateY(-50%);
 }
 
-
-.deal-doc-file {
+.mob_doc_file {
   margin-top: 0.2rem;
   width: 100%;
 }
 
-.common-input{
+.mob_academy_upload_input {
   border-radius: 0.3125rem;
   border: 1px solid #dcdcdc;
   background: #f3f6fa;
   padding: 0.7rem;
   cursor: pointer;
   height: 3rem;
-}
-
-
-.contact-tab-input {
   margin-bottom: 0.7rem;
 }
 
-.bmp-border {
+.mob_academy_upload_border {
   border-radius: 0.3125rem;
   border: 1px dashed #2b74da;
   background: #f3f6fa;
@@ -905,25 +896,25 @@ font-weight: 500;
   position: relative;
 }
 
-.upload-file-name {
+.upload_file_name {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   color: #2b74da;
 }
 
-.upload_format{
-  color:#33475B;
-font-size: 0.75rem;
+.upload_format {
+  color: #33475b;
+  font-size: 0.75rem;
 }
 
-.preview-icon {
-   /* Adjust the spacing */
+.preview_icon {
+  /* Adjust the spacing */
   color: #2b74da;
   cursor: pointer;
   position: absolute;
-  right:75px;
-  top:35%;
+  right: 75px;
+  top: 35%;
 }
 
 /* Style for the image preview modal */
@@ -942,8 +933,7 @@ font-size: 0.75rem;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: slideFromLeft 2s forwards;
-
+  animation: slideFromLeft 1s forwards;
 }
 
 /* Style for the preview image inside the modal */
@@ -979,7 +969,7 @@ font-size: 0.75rem;
 }
 
 .closing-animation {
-  animation: slideToLeft 2s forwards; /* Apply exit animation */
+  animation: slideToLeft 1s forwards; /* Apply exit animation */
 }
 
 @keyframes slideToLeft {
@@ -990,8 +980,6 @@ font-size: 0.75rem;
     left: -100%; /* End position */
   }
 }
-
-
 
 /* photo upload page end */
 

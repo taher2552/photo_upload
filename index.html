@@ -40,22 +40,25 @@
       <p class="mob_font">Recommended image size 190x190</p>
     </div>
 
-    <div class="bmp-upload-2">
-      <div class="contact-browse deal-doc-file">
-        <span class="mob_font common-input contact-tab-input bmp-border">
-          <button class="contact-browse-btn mob_font"
+    <div class="mob_academy_pic_upload">
+      <div class="mob_new_browse mob_doc_file">
+        <span class="mob_font mob_academy_upload_input mob_academy_upload_border">
+          <button class="mob_new_browse_btn mob_font"
             onclick="document.querySelector('input[type=file]').click()">Browse</button>
           <input type="file" style="display: none;" onchange="handleFileChange()" />
-          <div class="upload-file-name" id="file-name">
+          <div class="upload_file_name" id="file-name">
             <p>Browse image</p>
             <p class="mob_font upload_format">Upload in format png, jpg, jpeg, gif</p>
           </div>
-          <span class="preview-icon" id="preview-icon" onclick="handlePreviewClick()">
+          <span class="preview_icon" id="preview_icon" onclick="handlePreviewClick()">
             <img src="asset_mobile/images/eye.svg" alt="">
           </span>
         </span>
       </div>
     </div>
+
+
+    
 
     <!-- Your modal for image preview -->
     <div class="modal" id="image-preview-modal">
@@ -85,31 +88,31 @@
   // Function to handle file change
   // Function to handle file change
   function handleFileChange() {
-  const fileInput = document.querySelector('input[type="file"]');
-  const fileNameDisplay = document.getElementById('file-name');
-  const file = fileInput.files[0];
+    const fileInput = document.querySelector('input[type="file"]');
+    const fileNameDisplay = document.getElementById('file-name');
+    const file = fileInput.files[0];
 
-  if (file) {
-    const fileName = file.name;
-    const fileType = file.type.split('/')[0]; // Get the file type
+    if (file) {
+      const fileName = file.name;
+      const fileType = file.type.split('/')[0]; // Get the file type
 
-    // Check if the file type is an image
-    if (fileType === 'image') {
-      if (fileName.length > 15) {
-        // Truncate the name if it's longer than 15 characters
-        const truncatedName = fileName.substring(0, 15) + '...';
-        fileNameDisplay.textContent = truncatedName;
+      // Check if the file type is an image
+      if (fileType === 'image') {
+        if (fileName.length > 15) {
+          // Truncate the name if it's longer than 15 characters
+          const truncatedName = fileName.substring(0, 15) + '...';
+          fileNameDisplay.textContent = truncatedName;
+        } else {
+          fileNameDisplay.textContent = fileName;
+        }
       } else {
-        fileNameDisplay.textContent = fileName;
+        // If the selected file is not an image, clear the input
+        fileInput.value = ''; // Clear the input value
+        fileNameDisplay.textContent = 'Please select an image file';
+        // You can display an error message or take other actions as needed
       }
-    } else {
-      // If the selected file is not an image, clear the input
-      fileInput.value = ''; // Clear the input value
-      fileNameDisplay.textContent = 'Please select an image file';
-      // You can display an error message or take other actions as needed
     }
   }
-}
 
 
 
@@ -133,15 +136,15 @@
 
   // Function to close the image preview modal
   function closePreview() {
-  const imagePreviewModal = document.getElementById('image-preview-modal');
-  imagePreviewModal.classList.add('closing-animation');
+    const imagePreviewModal = document.getElementById('image-preview-modal');
+    imagePreviewModal.classList.add('closing-animation');
 
-  // Add a delay to remove the modal after the animation finishes
-  setTimeout(() => {
-    imagePreviewModal.style.display = 'none';
-    imagePreviewModal.classList.remove('closing-animation'); 
-  }, 2000); 
-}
+    // Add a delay to remove the modal after the animation finishes
+    setTimeout(() => {
+      imagePreviewModal.style.display = 'none';
+      imagePreviewModal.classList.remove('closing-animation');
+    }, 2000);
+  }
 
 
 
