@@ -872,6 +872,10 @@ input[type="number"] {
   transform: translateY(-50%);
 }
 
+.mob_browse_again{
+  z-index: 1000;
+}
+
 .mob_doc_file {
   margin-top: 0.2rem;
   width: 100%;
@@ -1099,6 +1103,10 @@ margin-right: 1rem;
 height: 5.4375rem;
 flex-shrink: 0;
 border-radius: 0.3125rem;
+}
+
+#fileInput{
+  display: none;
 }
 
 .mob_img_size{

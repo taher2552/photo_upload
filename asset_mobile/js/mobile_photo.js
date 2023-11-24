@@ -114,6 +114,11 @@ function closeBannerPreview() {
 
 // multiple image video js
 
+function openFileInput() {
+  // Trigger the hidden file input
+  document.getElementById('fileInput').click();
+}
+
 function handleImageVideoChange() {
   const fileInput = document.getElementById("file-upload");
   const imagePreviews = document.querySelector(".image-previews");

@@ -96,16 +96,19 @@
 
     <div class="mob_academy_pic_upload">
       <div class="mob_new_browse mob_doc_file">
+         
+        
+
+
         <span class="mob_font mob_academy_upload_input mob_input_height mob_academy_upload_border">
 
-          <label for="file-upload" class="mob_new_browse_btn mob_font" onclick="document.querySelector('#file-upload').click()" ontouchstart="document.querySelector('#file-upload').click()">Browse</label>
+          <button for="file-upload" class="mob_new_browse_btn mob_browse_again mob_font" onclick="document.querySelector('#file-upload').click()">Browse</button>
 
-<input type="file" id="file-upload" class="new-file-input" style="display: none;" multiple onchange="handleImageVideoChange()" />
-
+          <input type="file" id="file-upload" class="new-file-input" style="display: none;" multiple onchange="handleImageVideoChange()" />
 
           <div class="upload_file_name" id="img-video-name">
             <p>Browse multiple images/videos</p>
-            <p class="mob_font upload_format upload_format_2">Uploa images/videos ikkkkkkn formats: png, jpg, jpeg, gif, webp, mp4</p>
+            <p class="mob_font upload_format upload_format_2">Upload images/videos in formats: png, jpg, jpeg, gif, webp, mp4</p>
           </div>
 
         </span>
