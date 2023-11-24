@@ -1014,46 +1014,14 @@ input[type="number"] {
 
 .image-previews,
 .video-previews {
-  flex: 1;
-}
-
-.image-previews{
-  /* border: 1px solid green; */
   margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-  /* Adjustments */
-  display: flex; /* Display as flex */
-  justify-content: flex-start !important; /* Align items from the start */
-  align-items: flex-start !important; /* Align items from the start */
-  flex-wrap: nowrap; /* Prevent items from wrapping */
-  overflow-x: auto; /* Enable horizontal scroll if needed */
-
-}
-
-
-
-
-
-
-
-.mob_img_card {
-  flex: 0 0 auto;
-  margin: 0 10px; /* Adjust margin as needed */
-}
-
-
-
-
-
-
-
-
-.video-previews{
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
+  display: flex; 
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap; 
+  overflow-x: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .preview {
@@ -1068,8 +1036,8 @@ background: #F3F6FA;
 width: 10.875rem;
 height: 8.25rem;
 padding: 0.5rem;
-margin-right: 1rem;
 min-width: 10.875rem; /* Set a minimum width for each card */
+margin-right: 1rem;
 }
 
 .mob_img_name{
