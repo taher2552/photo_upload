@@ -959,6 +959,7 @@ input[type="number"] {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   animation: slideFromLeft 0.5s forwards;
+  z-index: 1001;
 }
 
 /* Style for the preview image inside the modal */

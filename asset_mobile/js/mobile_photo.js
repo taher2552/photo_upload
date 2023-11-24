@@ -59,6 +59,7 @@ function handleLogoPreviewClick() {
   const fileInput = document.querySelector(".institute-logo-input");
   const imagePreviewModal = document.getElementById("image-preview-modal-1");
   const previewImage = document.getElementById("preview-image-1");
+  const body = document.querySelector("body");
 
   if (fileInput.files && fileInput.files[0]) {
     const reader = new FileReader();
@@ -68,14 +69,20 @@ function handleLogoPreviewClick() {
     };
 
     reader.readAsDataURL(fileInput.files[0]);
+
+    // Prevent background scrolling
+    body.style.overflow = "hidden";
+
     imagePreviewModal.style.display = "block";
   }
 }
+
 
 function handleBannerPreviewClick() {
   const fileInput = document.querySelector(".banner-file-input");
   const imagePreviewModal = document.getElementById("image-preview-modal-2");
   const previewImage = document.getElementById("preview-image-2");
+  const body = document.querySelector("body");
 
   if (fileInput.files && fileInput.files[0]) {
     const reader = new FileReader();
@@ -85,6 +92,10 @@ function handleBannerPreviewClick() {
     };
 
     reader.readAsDataURL(fileInput.files[0]);
+
+    // Prevent background scrolling
+    body.style.overflow = "hidden";
+
     imagePreviewModal.style.display = "block";
   }
 }
@@ -92,7 +103,10 @@ function handleBannerPreviewClick() {
 // Function to close the image preview modal
 function closeLogoPreview() {
   const imagePreviewModal = document.getElementById("image-preview-modal-1");
+  const body = document.querySelector("body");
   imagePreviewModal.classList.add("closing-animation");
+
+  body.style.overflow = "auto";
 
   // Add a delay to remove the modal after the animation finishes
   setTimeout(() => {
@@ -103,7 +117,10 @@ function closeLogoPreview() {
 
 function closeBannerPreview() {
   const imagePreviewModal = document.getElementById("image-preview-modal-2");
+  const body = document.querySelector("body");
   imagePreviewModal.classList.add("closing-animation");
+
+  body.style.overflow = "auto";
 
   // Add a delay to remove the modal after the animation finishes
   setTimeout(() => {
@@ -238,8 +255,3 @@ function handleImageVideoChange() {
 
 // multiple image video js ends
 
-// arrow click slide image js
-
-
-
-// arrow click slide image js ends
