@@ -116,7 +116,7 @@ function closeBannerPreview() {
 
 function openFileInput() {
   // Trigger the hidden file input
-  document.getElementById('fileInput').click();
+  document.getElementById("fileInput").click();
 }
 
 function handleImageVideoChange() {
@@ -237,3 +237,8 @@ function handleImageVideoChange() {
 }
 
 // multiple image video js ends
+
+// arrow click slide image js
+
+
+// arrow click slide image js ends

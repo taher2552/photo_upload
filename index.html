@@ -8,12 +8,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="asset_mobile/css/mob_academy_register.css" />
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <!-- Slick Theme CSS (if needed) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  
+  <!-- Slick JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  <style>
+    /* Adjust the styles as needed for proper alignment */
+ 
+  </style>
+
+
 </head>
 
 <body>
-  <section class="mob_login_container">
+  <section class="mob_photo_container">
 
-    <div class="mob_top_logo">
+    <div class="mob_photo_logo">
       <img src="asset_mobile/images/logo.svg" alt="" />
     </div>
 
@@ -102,7 +118,7 @@
 
         <span class="mob_font mob_academy_upload_input mob_input_height mob_academy_upload_border">
 
-          <button for="file-upload" class="mob_new_browse_btn mob_browse_again mob_font" onclick="document.querySelector('#file-upload').click()">Browse</button>
+          <button for="file-upload" class="mob_new_browse_btn  mob_font" onclick="document.querySelector('#file-upload').click()">Browse</button>
 
           <input type="file" id="file-upload" class="new-file-input" style="display: none;" multiple onchange="handleImageVideoChange()" />
 
@@ -116,9 +132,10 @@
     </div>
     
     <div class="preview-container">
+      <div class="image-container">
       <div class="image-previews">
         
-        <!-- <div class="mob_img_card">
+        <div class="mob_img_card">
            <div class="mob_card_flex">
 
             <div class="mob_card_top">
@@ -134,20 +151,122 @@
 
            
            <div class="mob_img_size">
-            <video src="asset_mobile/images/WIN_20230114_10_56_01_Pro.mp4"></video>
+            <img src="asset_mobile/images/demo.png" alt="">
           </div>
-        </div> -->
+        </div>
+        <div class="mob_img_card">
+           <div class="mob_card_flex">
 
-        <!-- <div class="academy_arrow_white_1 left_arrow">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <div class="mob_card_top">
+              <img src="asset_mobile/images/mob_gallery.svg" alt="">
+              <p class="mob_font mob_img_name">Player.jpg</p>
+            </div>
+
+            <div>
+              <img src="asset_mobile/images/mob_delete.svg" alt="">
+            </div>
+
+           </div>
+
+           
+           <div class="mob_img_size">
+            <img src="asset_mobile/images/demo.png" alt="">
+          </div>
+        </div>
+        <div class="mob_img_card">
+           <div class="mob_card_flex">
+
+            <div class="mob_card_top">
+              <img src="asset_mobile/images/mob_gallery.svg" alt="">
+              <p class="mob_font mob_img_name">Player.jpg</p>
+            </div>
+
+            <div>
+              <img src="asset_mobile/images/mob_delete.svg" alt="">
+            </div>
+
+           </div>
+
+           
+           <div class="mob_img_size">
+            <img src="asset_mobile/images/demo.png" alt="">
+          </div>
+        </div>
+        <div class="mob_img_card">
+           <div class="mob_card_flex">
+
+            <div class="mob_card_top">
+              <img src="asset_mobile/images/mob_gallery.svg" alt="">
+              <p class="mob_font mob_img_name">Player.jpg</p>
+            </div>
+
+            <div>
+              <img src="asset_mobile/images/mob_delete.svg" alt="">
+            </div>
+
+           </div>
+
+           
+           <div class="mob_img_size">
+            <img src="asset_mobile/images/demo.png" alt="">
+          </div>
+        </div>
+
+
+
+      </div>
+      </div>
+      <div class="video-previews">
+
+        <div class="mob_img_card">
+          <div class="mob_card_flex">
+
+           <div class="mob_card_top">
+             <img src="asset_mobile/images/mob_gallery.svg" alt="">
+             <p class="mob_font mob_img_name">Player.jpg</p>
+           </div>
+
+           <div>
+             <img src="asset_mobile/images/mob_delete.svg" alt="">
+           </div>
+
+          </div>
+
+          
+          <div class="mob_img_size">
+           <video src="asset_mobile/images/WIN_20230114_10_56_01_Pro.mp4"></video>
+         </div>
+       </div>
+
+       <div class="mob_img_card">
+        <div class="mob_card_flex">
+
+         <div class="mob_card_top">
+           <img src="asset_mobile/images/mob_gallery.svg" alt="">
+           <p class="mob_font mob_img_name">Player.jpg</p>
+         </div>
+
+         <div>
+           <img src="asset_mobile/images/mob_delete.svg" alt="">
+         </div>
+
+        </div>
+
+        
+        <div class="mob_img_size">
+         <video src="asset_mobile/images/WIN_20230114_10_56_01_Pro.mp4"></video>
+       </div>
+     </div>
+
       </div>
 
-      <div class="academy_arrow_white right_arrow">
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
-      </div> -->
+      <div class="academy_arrow_white_1 left_arrow" id="leftArrow">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </div>
 
-      </div>
-      <div class="video-previews"></div>
+    <div class="academy_arrow_white right_arrow" id="rightArrow">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </div>
     </div>
     
     
@@ -186,8 +305,5 @@
 <script src="asset_mobile/js/mobile_photo.js"></script>
 
 
-<script>
-
-</script>
 
 </html>
