@@ -114,7 +114,11 @@ function closeBannerPreview() {
 
 // multiple image video js
 
+
+
 function handleImageVideoChange() {
+  
+  
   const fileInput = document.getElementById("file-upload");
   const imagePreviews = document.querySelector(".image-previews");
   const videoPreviews = document.querySelector(".video-previews");
@@ -231,5 +235,10 @@ function handleImageVideoChange() {
     reader.readAsDataURL(file); // Read the file as a data URL
   }
 }
+
+// Remove the event listener for .mob_new_browse_btn
+
+
+
 
 // multiple image video js ends

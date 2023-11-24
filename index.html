@@ -97,19 +97,29 @@
     <div class="mob_academy_pic_upload">
       <div class="mob_new_browse mob_doc_file">
         <span class="mob_font mob_academy_upload_input mob_input_height mob_academy_upload_border">
+    
+          <!-- Use an input of type "file" for file selection -->
+          <input type="file" id="file-upload" class="new-file-input" style="opacity: 0; position: absolute;" multiple accept="image/*,video/*" onchange="handleImageVideoChange()" />
 
-          <label for="file-upload" class="mob_new_browse_btn mob_font">Browse</label>
+    
+          <!-- Use a button to open file selection dialog -->
+          <button id="browse-btn" class="mob_new_browse_btn mob_font" onclick="document.getElementById('file-upload').click();">Browse</button>
 
-          <input type="file" id="file-upload" class="new-file-input" style="display: none;" multiple onchange="handleImageVideoChange()" />
-
+          <button class="mob_new_browse_btn mob_font"
+          onclick="document.getElementById('file-upload').click();">Browse</button>
+    
           <div class="upload_file_name" id="img-video-name">
             <p>Browse multiple images/videos</p>
-            <p class="mob_font upload_format upload_format_2">Upload images/videos in formats: png, jpg, jpeg, gif, webp, mp4</p>
+            <p class="mob_font upload_format upload_format_2">Uploadddd images/videos in formats: png, jpg, jpeg, gif, webp, mp4</p>
           </div>
-
+    
         </span>
       </div>
     </div>
+    
+    
+    
+    
     
     <div class="preview-container">
       <div class="image-previews">
@@ -183,6 +193,12 @@
 
 
 <script>
+//   document.addEventListener('DOMContentLoaded', function() {
+//   document.getElementById('browse-btn').addEventListener('click', function() {
+//     const fileInput = document.getElementById('file-upload');
+//     fileInput.click(); // Simulate a click on the file input element
+//   });
+// });
 
 </script>
 
