@@ -43,27 +43,65 @@
     <div class="mob_academy_pic_upload">
       <div class="mob_new_browse mob_doc_file">
         <span class="mob_font mob_academy_upload_input mob_academy_upload_border">
+
           <button class="mob_new_browse_btn mob_font"
-            onclick="document.querySelector('input[type=file]').click()">Browse</button>
-          <input type="file" style="display: none;" onchange="handleFileChange()" />
-          <div class="upload_file_name" id="file-name">
+          onclick="document.querySelector('.institute-logo-input').click()">Browse</button>
+
+          <input type="file" class="institute-logo-input" style="display: none;" onchange="handleLogoChange()" />
+
+          <div class="upload_file_name" id="logo-name">
             <p>Browse image</p>
             <p class="mob_font upload_format">Upload in format png, jpg, jpeg, gif</p>
           </div>
-          <span class="preview_icon" id="preview_icon" onclick="handlePreviewClick()">
+
+          <span class="preview_icon" id="logo_preview_icon" onclick="handleLogoPreviewClick()">
             <img src="asset_mobile/images/eye.svg" alt="">
           </span>
+
+        </span>
+      </div>
+    </div>
+
+    <div class="mob_upload_photo">
+      <p class="mob_font">Add Banner Image</p>
+      <p class="mob_font">Recommended image size 820x312</p>
+    </div>
+
+    <div class="mob_academy_pic_upload">
+      <div class="mob_new_browse mob_doc_file">
+        <span class="mob_font mob_academy_upload_input mob_academy_upload_border">
+
+          <button class="mob_new_browse_btn mob_font"
+          onclick="document.querySelector('.banner-file-input').click()">Browse</button>
+
+          <input type="file" class="banner-file-input" style="display: none;" onchange="handleBannerChange()" />
+
+          <div class="upload_file_name" id="banner-name">
+            <p>Browse image</p>
+            <p class="mob_font upload_format">Upload in format png, jpg, jpeg, gif</p>
+          </div>
+
+          <span class="preview_icon" id="banner_preview_icon" onclick="handleBannerPreviewClick()">
+            <img src="asset_mobile/images/eye.svg" alt="">
+          </span>
+          
         </span>
       </div>
     </div>
 
 
-    
+
 
     <!-- Your modal for image preview -->
-    <div class="modal" id="image-preview-modal">
-      <span class="close" onclick="closePreview()"><img src="asset_mobile/images/menu_cross_white.svg" alt=""></span>
-      <img class="modal-content" id="preview-image" src="">
+    <div class="modal" id="image-preview-modal-1">
+      <span class="close" onclick="closeLogoPreview()"><img src="asset_mobile/images/menu_cross_white.svg" alt=""></span>
+      <img class="modal-content" id="preview-image-1" src="">
+    </div>
+
+
+    <div class="modal" id="image-preview-modal-2">
+      <span class="close" onclick="closeBannerPreview()"><img src="asset_mobile/images/menu_cross_white.svg" alt=""></span>
+      <img class="modal-content" id="preview-image-2" src="">
     </div>
 
 
@@ -83,71 +121,6 @@
 
 
 </body>
-
-<script>
-  // Function to handle file change
-  // Function to handle file change
-  function handleFileChange() {
-    const fileInput = document.querySelector('input[type="file"]');
-    const fileNameDisplay = document.getElementById('file-name');
-    const file = fileInput.files[0];
-
-    if (file) {
-      const fileName = file.name;
-      const fileType = file.type.split('/')[0]; // Get the file type
-
-      // Check if the file type is an image
-      if (fileType === 'image') {
-        if (fileName.length > 15) {
-          // Truncate the name if it's longer than 15 characters
-          const truncatedName = fileName.substring(0, 15) + '...';
-          fileNameDisplay.textContent = truncatedName;
-        } else {
-          fileNameDisplay.textContent = fileName;
-        }
-      } else {
-        // If the selected file is not an image, clear the input
-        fileInput.value = ''; // Clear the input value
-        fileNameDisplay.textContent = 'Please select an image file';
-        // You can display an error message or take other actions as needed
-      }
-    }
-  }
-
-
-
-  // Function to handle preview click
-  function handlePreviewClick() {
-    const fileInput = document.querySelector('input[type="file"]');
-    const imagePreviewModal = document.getElementById('image-preview-modal');
-    const previewImage = document.getElementById('preview-image');
-
-    if (fileInput.files && fileInput.files[0]) {
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        previewImage.src = e.target.result;
-      };
-
-      reader.readAsDataURL(fileInput.files[0]);
-      imagePreviewModal.style.display = 'block';
-    }
-  }
-
-  // Function to close the image preview modal
-  function closePreview() {
-    const imagePreviewModal = document.getElementById('image-preview-modal');
-    imagePreviewModal.classList.add('closing-animation');
-
-    // Add a delay to remove the modal after the animation finishes
-    setTimeout(() => {
-      imagePreviewModal.style.display = 'none';
-      imagePreviewModal.classList.remove('closing-animation');
-    }, 500);
-  }
-
-
-
-</script>
+<script src="asset_mobile/js/mobile_photo.js"></script>
 
 </html>
