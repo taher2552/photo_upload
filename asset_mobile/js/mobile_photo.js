@@ -114,11 +114,7 @@ function closeBannerPreview() {
 
 // multiple image video js
 
-
-
 function handleImageVideoChange() {
-  
-  
   const fileInput = document.getElementById("file-upload");
   const imagePreviews = document.querySelector(".image-previews");
   const videoPreviews = document.querySelector(".video-previews");
@@ -215,7 +211,6 @@ function handleImageVideoChange() {
         const uploadVideo = document.createElement("video");
         uploadVideo.src = event.target.result;
         uploadVideo.setAttribute("controls", "");
-        // uploadVideo.classList.add("preview");
 
         cardTop.appendChild(img);
         cardTop.appendChild(imageName);
@@ -235,10 +230,5 @@ function handleImageVideoChange() {
     reader.readAsDataURL(file); // Read the file as a data URL
   }
 }
-
-// Remove the event listener for .mob_new_browse_btn
-
-
-
 
 // multiple image video js ends
