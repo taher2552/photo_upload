@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset_mobile/css/mob_academy_register.css" />
+
+</head>
+
+<body>
+    <section class="mob_login_container">
+
+        <div class="mob_top_logo">
+            <img src="asset_mobile/images/logo.svg" alt="" />
+        </div>
+
+        <div class="mob_login_account_wrapper">
+            <p class="mob_login_authenticate">Select sports</p>
+        </div>
+
+        <div class="mob_academy_progress">
+            <div class="mob_academy_circle mob_academy_stage">
+                1
+            </div>
+            <div class="mob_academy_line"></div>
+            <div class="mob_academy_circle">
+                2
+            </div>
+            <div class="mob_academy_line"></div>
+            <div class="mob_academy_circle">
+                3
+            </div>
+        </div>
+
+        <div class="mob_upload_photo">
+            <p class="mob_font">Add Institute Logo</p>
+            <p class="mob_font">Recommended image size 190x190</p>
+        </div>
+
+        <div class="bmp-upload-2">
+            <div class="contact-browse deal-doc-file">
+              <span class="mob_font common-input contact-tab-input bmp-border" style="position: relative;">
+                <button class="contact-browse-btn mob_font" onclick="document.querySelector('input[type=file]').click()">Browse</button>
+                <input type="file" style="display: none;" onchange="handleFileChange()" />
+                <span class="upload-file-name" id="file-name">
+                </span>
+                <span class="preview-icon" id="preview-icon" onclick="handlePreviewClick()">
+                  <img src="asset_mobile/images/eye.svg" alt="">
+                </span>
+              </span>
+            </div>
+          </div>
+          
+          <!-- Your modal for image preview -->
+          <div class="modal" id="image-preview-modal">
+            <span class="close" onclick="closePreview()">&times;</span>
+            <img class="modal-content" id="preview-image" src="">
+          </div>
+          
+
+
+
+
+        <div class="mob_btn_wrapper">
+            <div class="mob_login_create_profile">
+                <button>Save</button>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+</body>
+
+<script>
+   // Function to handle file change
+// Function to handle file change
+function handleFileChange() {
+  const fileInput = document.querySelector('input[type="file"]');
+  const fileNameDisplay = document.getElementById('file-name');
+  const file = fileInput.files[0];
+  if (file) {
+    const fileName = file.name;
+    if (fileName.length > 15) {
+      // Truncate the name if it's longer than 15 characters
+      const truncatedName = fileName.substring(0, 15) + '...';
+      fileNameDisplay.textContent = truncatedName;
+    } else {
+      fileNameDisplay.textContent = fileName;
+    }
+  }
+}
+
+
+// Function to handle preview click
+function handlePreviewClick() {
+  const fileInput = document.querySelector('input[type="file"]');
+  const imagePreviewModal = document.getElementById('image-preview-modal');
+  const previewImage = document.getElementById('preview-image');
+
+  if (fileInput.files && fileInput.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      previewImage.src = e.target.result;
+    };
+
+    reader.readAsDataURL(fileInput.files[0]);
+    imagePreviewModal.style.display = 'block';
+  }
+}
+
+// Function to close the image preview modal
+function closePreview() {
+  const imagePreviewModal = document.getElementById('image-preview-modal');
+  imagePreviewModal.style.display = 'none';
+}
+
+  
+</script>
+
+</html>
