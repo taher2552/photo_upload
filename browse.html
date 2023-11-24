@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style to hide the file input */
+        #fileInput {
+            display: none;
+        }
+
+        /* Style for the custom upload button */
+        #customUploadButton {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hidden file input -->
+<input type="file" id="fileInput" multiple accept="image/*,video/*" onchange="handleFiles(this.files)">
+
+<!-- Custom upload button -->
+<button id="customUploadButton" onclick="openFileInput()">Choose Images</button>
+
+<script>
+function openFileInput() {
+    // Trigger the hidden file input
+    document.getElementById('fileInput').click();
+}
+
+function handleFiles(files) {
+    if (files.length > 0) {
+        var formData = new FormData();
+
+        for (var i = 0; i < files.length; i++) {
+            formData.append('files[]', files[i]);
+            console.log(files[i])
+        }
+
+        // You can send the formData using AJAX to a server endpoint
+        // For example, using the Fetch API:
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Files uploaded successfully:', data);
+            // Handle the response as needed
+        })
+        .catch(error => {
+            console.error('Error uploading files:', error);
+        });
+    } else {
+        console.warn('No files selected for upload.');
+    }
+}
+</script>
+
+</body>
+</html>
