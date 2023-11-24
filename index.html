@@ -59,7 +59,7 @@
 
     <!-- Your modal for image preview -->
     <div class="modal" id="image-preview-modal">
-      <span class="close" onclick="closePreview()">&times;</span>
+      <span class="close" onclick="closePreview()"><img src="asset_mobile/images/menu_cross_white.svg" alt=""></span>
       <img class="modal-content" id="preview-image" src="">
     </div>
 
@@ -85,11 +85,16 @@
   // Function to handle file change
   // Function to handle file change
   function handleFileChange() {
-    const fileInput = document.querySelector('input[type="file"]');
-    const fileNameDisplay = document.getElementById('file-name');
-    const file = fileInput.files[0];
-    if (file) {
-      const fileName = file.name;
+  const fileInput = document.querySelector('input[type="file"]');
+  const fileNameDisplay = document.getElementById('file-name');
+  const file = fileInput.files[0];
+
+  if (file) {
+    const fileName = file.name;
+    const fileType = file.type.split('/')[0]; // Get the file type
+
+    // Check if the file type is an image
+    if (fileType === 'image') {
       if (fileName.length > 15) {
         // Truncate the name if it's longer than 15 characters
         const truncatedName = fileName.substring(0, 15) + '...';
@@ -97,8 +102,15 @@
       } else {
         fileNameDisplay.textContent = fileName;
       }
+    } else {
+      // If the selected file is not an image, clear the input
+      fileInput.value = ''; // Clear the input value
+      fileNameDisplay.textContent = 'Please select an image file';
+      // You can display an error message or take other actions as needed
     }
   }
+}
+
 
 
   // Function to handle preview click
@@ -121,9 +133,16 @@
 
   // Function to close the image preview modal
   function closePreview() {
-    const imagePreviewModal = document.getElementById('image-preview-modal');
+  const imagePreviewModal = document.getElementById('image-preview-modal');
+  imagePreviewModal.classList.add('closing-animation');
+
+  // Add a delay to remove the modal after the animation finishes
+  setTimeout(() => {
     imagePreviewModal.style.display = 'none';
-  }
+    imagePreviewModal.classList.remove('closing-animation'); 
+  }, 2000); 
+}
+
 
 
 </script>

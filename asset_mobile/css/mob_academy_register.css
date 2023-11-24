@@ -942,15 +942,29 @@ font-size: 0.75rem;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: slideFromLeft 2s forwards;
+
 }
 
 /* Style for the preview image inside the modal */
+
 .modal-content {
   max-width: 100%;
   max-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: -100%; /* Start off-screen to the left */
+  transform: translate(-50%, -50%);
+  animation: slideFromLeft 0s forwards; /* Apply animation */
+}
+
+@keyframes slideFromLeft {
+  from {
+    left: -100%; /* Start position */
+  }
+  to {
+    left: 50%; /* End position */
+  }
 }
 
 /* Style for the close button */
@@ -962,6 +976,19 @@ font-size: 0.75rem;
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+.closing-animation {
+  animation: slideToLeft 2s forwards; /* Apply exit animation */
+}
+
+@keyframes slideToLeft {
+  from {
+    left: 50%; /* Start position */
+  }
+  to {
+    left: -100%; /* End position */
+  }
 }
 
 
