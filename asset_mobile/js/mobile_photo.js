@@ -175,6 +175,10 @@ function handleImageVideoChange() {
         deleteIcon.src = "asset_mobile/images/mob_delete.svg";
         deleteIcon.alt = "";
 
+        deleteIcon.addEventListener("click", function () {
+          previewContainer.remove(); // Remove the entire preview container
+        });
+
         const imgSize = document.createElement("div");
         imgSize.classList.add("mob_img_size");
 
@@ -195,12 +199,6 @@ function handleImageVideoChange() {
 
         imagePreviews.appendChild(previewContainer);
       } else if (fileType === "video") {
-        // const video = document.createElement("video");
-        // video.src = event.target.result;
-        // video.setAttribute("controls", "");
-        // video.classList.add("preview");
-
-        // imagePreviews.appendChild(video);
 
         const previewContainer = document.createElement("div");
         previewContainer.classList.add("mob_img_card");
@@ -226,6 +224,10 @@ function handleImageVideoChange() {
         const deleteIcon = document.createElement("img");
         deleteIcon.src = "asset_mobile/images/mob_delete.svg";
         deleteIcon.alt = "";
+
+        deleteIcon.addEventListener("click", function () {
+          previewContainer.remove(); // Remove the entire preview container
+        });
 
         const imgSize = document.createElement("div");
         imgSize.classList.add("mob_img_size");

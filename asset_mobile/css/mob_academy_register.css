@@ -15,14 +15,12 @@
   padding-top: 0.8rem;
   flex-direction: column;
   position: relative;
-  border: 1px solid green;
 }
 .mob_photo_container {
   max-width: 550px;
   margin: 0 auto;
   padding-top: 0.8rem;
   position: relative;
-  border: 1px solid green;
 }
 
 .mob_photo_logo{
@@ -1034,10 +1032,10 @@ input[type="number"] {
 .mob_img_card{
 border-radius: 0.3125rem;
 background: #F3F6FA;
-width: 10.875rem;
+width: 10rem;
 height: 8.25rem;
 padding: 0.5rem;
-min-width: 10.875rem; /* Set a minimum width for each card */
+min-width: 10rem; /* Set a minimum width for each card */
 margin-right: 1rem;
 }
 
@@ -1105,7 +1103,7 @@ margin-right: 1rem;
 }
 
 .mob_img_size img, .mob_img_size video{
-  width: 9.875rem;
+  width: 9rem;
 height: 5.4375rem;
 flex-shrink: 0;
 border-radius: 0.3125rem;
