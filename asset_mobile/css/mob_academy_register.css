@@ -1032,10 +1032,10 @@ input[type="number"] {
 .mob_img_card{
 border-radius: 0.3125rem;
 background: #F3F6FA;
-width: 10.5rem;
+width: 10.25rem;
 height: 8.25rem;
 padding: 0.5rem;
-min-width: 10.5rem; /* Set a minimum width for each card */
+min-width: 10.25rem; /* Set a minimum width for each card */
 margin-right: 1rem;
 }
 
@@ -1103,7 +1103,7 @@ margin-right: 1rem;
 }
 
 .mob_img_size img, .mob_img_size video{
-  width: 9.5rem;
+  width: 9.25rem;
 height: 5.4375rem;
 flex-shrink: 0;
 border-radius: 0.3125rem;
